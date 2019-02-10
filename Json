@@ -1,0 +1,61 @@
+/*
+Json经典的工具:JsonUtility、LitJson;
+//----------------
+unity自带Json:JsonUtility;
+需要自己新建对象类Person；
+新建组合类Person，包含对象类数组A[];并创建组合类实例thePersons
+然后创建Json:
+string JsonStr=JsonUtility.ToJson(thePersons);
+解析Json:
+Persons thePs=JsonUtility.FromJson<Persons>(JsonStr);
+//---------------
+LitJson.dll工具下载在"风云等我一下"百度云里下载。
+
+使用LitJson有两种方法创建和解析：
+1、
+还是需要自己写对象类和组合类；
+创建：
+string JsonStr2=JsonMapper.ToJson(自定义类对象名);
+Debug.Log(JsonStr2);
+解析：
+类 对象名=JsonMapper.ToObject<类>(JsonStr2);
+Debug.Log(对象名.key);
+2、
+不需要定义对象类和组合类；
+JsonDate jd_1=new JsonData();
+jd_1["name"]="孙权";
+jd_1["age"]=20;
+ 
+ JsonData jd_2=new JsonData();
+ jd_2["name"]="曹操";
+ jd_2["age"]=32;
+ 
+ //相当于数组，但是其实还是一个JsonData;
+ JsonData JD_1=new JsonData();
+ JD_1.SetJsonType(JsonType.Array);//显示告诉我们它的类型
+ JD_1.Add(jd_1);
+ JD_1.Add(jd_2);
+ 
+ //组合类,
+ JsonData BIGJsonData=new JsonData();
+ BIGJsonData["Info"]=JD_1;
+ 
+ Json的创建：
+ Debug.Log(BIGJsonData.ToJson());
+ Json的解析：
+ string BIGjsonStr="{"persons":[{'name':'孙权','age':20},{'name':'曹操','age':32}]};
+ JsonData BIGJsonD=JsonMapper.ToObject(jsonStr);
+ JsonData persons=persons.["persons"];
+ foreach(person p in persons)
+ {
+    //字符串需要ToString()函数
+    Debug.Log(p["name"].ToString());
+    //数值型需要强转？
+    Debug.Log((int)p["age"])
+ }
+
+
+
+
+
+*/
