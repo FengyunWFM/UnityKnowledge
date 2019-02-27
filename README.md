@@ -26,6 +26,14 @@ float v=Input.GetAxis("Mouse Y")*Speed;
 
 transform.Rotate(V,h,0);
 
+3、材质>贴图>纹理。贴图的模式选择：https://blog.csdn.net/u010930289/article/details/50880941
+贴图选择：自己画的png。
+Rendering Mode的选择：
+3_1.Opaque完全不透明的。
+3_2.CutOut大于阈值则不透明，小于阈值透明。
+3_3.Fade允许透明度数值彻底地使一个物体淡出，包括任何它可能带有的镜面高光或者反射。
+3_4.Transparent真实的透明度显示，材质自带透明值，也会自然地反射场景的光。
+在不同的模式下调节贴图透明度都会产生不同的结果。
 
-
+（CutOut可以产生溶解的效果）
 
