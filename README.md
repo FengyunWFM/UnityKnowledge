@@ -37,3 +37,5 @@ Rendering Mode的选择：
 
 （CutOut可以产生溶解的效果）
 
+4、[AddComponentMenu("XX/XX")]
+  加在类前一行，能添加在unity面板Component上。
