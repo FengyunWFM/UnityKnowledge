@@ -39,3 +39,8 @@ Rendering Mode的选择：
 
 4、[AddComponentMenu("XX/XX")]
   加在类前一行，能添加在unity面板Component上。
+
+
+
+
+5、不要在Upate函数调用this.transform组件，会影响效率。在Start函数里将m_Transform取出再使用。
