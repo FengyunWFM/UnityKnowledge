@@ -44,3 +44,5 @@ Rendering Mode的选择：
 
 
 5、不要在Upate函数调用this.transform组件，会影响效率。在Start函数里将m_Transform取出再使用。
+
+6、当类中有对象的组合使用，可以写public Transform m_XX；因为所有物体都有tranform组件，所有用gameobject和Transform是一样的。
